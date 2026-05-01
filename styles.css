@@ -1,0 +1,271 @@
+:root {
+  --bg: #f5efe6;
+  --bg-accent: #efe2cf;
+  --panel: rgba(255, 252, 247, 0.85);
+  --text: #1f2933;
+  --muted: #52606d;
+  --line: rgba(31, 41, 51, 0.08);
+  --brand: #b14d2c;
+  --brand-dark: #7b2f16;
+  --shadow: 0 24px 60px rgba(89, 52, 32, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(177, 77, 44, 0.16), transparent 32%),
+    linear-gradient(180deg, #fbf7f1 0%, var(--bg) 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(31, 41, 51, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 41, 51, 0.02) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 90%);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero,
+.grid-section,
+.timeline,
+.cards,
+.projects {
+  margin-bottom: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.hero__copy,
+.hero__card,
+.panel,
+.timeline__item,
+.skill-card,
+.project-card {
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero__copy {
+  padding: 3rem;
+}
+
+.eyebrow,
+.section-tag,
+.hero__card-title,
+.timeline__period {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--brand);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  margin-top: 0.5rem;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  margin: 0.4rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.65rem;
+}
+
+p,
+li,
+span,
+a {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+p,
+li,
+span {
+  color: var(--muted);
+}
+
+.hero__lead {
+  max-width: 40rem;
+  font-size: 1.15rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  color: #fffaf4;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+}
+
+.button--ghost {
+  color: var(--text);
+  border: 1px solid rgba(31, 41, 51, 0.12);
+}
+
+.hero__card {
+  padding: 2rem;
+  background:
+    linear-gradient(180deg, rgba(177, 77, 44, 0.96), rgba(123, 47, 22, 0.96)),
+    var(--panel);
+}
+
+.hero__card-title,
+.hero__card li {
+  color: #fffaf4;
+}
+
+.hero__card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.grid-section,
+.cards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.panel,
+.skill-card,
+.project-card {
+  padding: 2rem;
+}
+
+.metric-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.metric-list strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: "Sora", sans-serif;
+  color: var(--text);
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+  margin-top: 1rem;
+}
+
+.projects .project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-card a {
+  color: var(--brand-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .grid-section,
+  .cards__grid,
+  .timeline__item {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__copy,
+  .hero__card,
+  .panel,
+  .skill-card,
+  .project-card,
+  .timeline__item {
+    padding: 1.5rem;
+  }
+
+  .projects .project-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
