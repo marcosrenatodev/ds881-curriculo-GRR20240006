@@ -6,6 +6,10 @@ Currículo/portfólio profissional estático publicado com GitHub Pages, desenvo
 
 `https://marcosrenatodev.github.io/ds881-curriculo-GRR20240006/`
 
+### Evidência da aplicação em produção
+
+![Currículo publicado no GitHub Pages](docs/prod-pages.png)
+
 ## Stack adotada
 
 - Vite para servir e gerar a aplicação estática
@@ -91,7 +95,9 @@ Descrição da configuração aplicada no GitHub:
 - Selecionar o workflow do GitHub Actions deste repositório como check obrigatório
 - Bloquear `push` direto na `main`
 
-Se desejar, você pode complementar esta seção depois com um print da tela de Branch Protection nas configurações do GitHub, conforme solicitado na atividade.
+### Evidência da configuração no GitHub
+
+![Configuração de Branch Protection da main](docs/branch-protection.jpg)
 
 ## Estrutura do projeto
 
@@ -107,9 +113,3 @@ Se desejar, você pode complementar esta seção depois com um print da tela de 
 ├── styles.css
 └── vite.config.js
 ```
-
-## Observações
-
-- O `base` do Vite está configurado para este repositório: `ds881-curriculo-GRR20240006`
-- Caso o nome do repositório mude, ajuste [vite.config.js](/home/mrblue/Projects/tads/tec_emerg/ds881-curriculo-GRR20240006/vite.config.js:1)
-- Os dados pessoais e textos do currículo podem ser adaptados conforme necessário
